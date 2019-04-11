@@ -13,3 +13,4 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'push'
+    searchPatternPush: './dist/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
