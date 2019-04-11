@@ -8,4 +8,4 @@ steps:
 - task: ShellScript@2
   inputs:
     scriptPath: build.sh
-    args: build
+    args: nuget-package
