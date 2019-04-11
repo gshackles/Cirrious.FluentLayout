@@ -10,7 +10,6 @@ steps:
     scriptPath: build.sh
     args: nuget-package
 
-- task: PublishBuildArtifacts@1
+- task: NuGetCommand@2
   inputs:
-    PathtoPublish: './dist/*.nupkg'
-    ArtifactName: nuget
+    command: 'push'
