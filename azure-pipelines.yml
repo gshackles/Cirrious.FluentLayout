@@ -1,0 +1,10 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'macOS-10.13'
+
+steps:
+- task: ShellScript@2
+  inputs:
+    scriptPath: build.sh
