@@ -9,3 +9,7 @@ steps:
   inputs:
     scriptPath: build.sh
     args: nuget-package
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: './dist/'
