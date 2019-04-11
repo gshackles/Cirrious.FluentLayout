@@ -1,0 +1,17 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'macOS-10.13'
+
+steps:
+- task: ShellScript@2
+  inputs:
+    scriptPath: build.sh
+    args: nuget-package
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    searchPatternPush: './dist/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    feedPublish: 'Private_NuGet'
